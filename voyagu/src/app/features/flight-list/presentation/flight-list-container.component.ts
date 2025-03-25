@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {userLoginUseCaseProvider} from "./flight-list.providers";
-import {FlightListRepository} from "../domain/repository/flight-list.repository";
-import {FlightListImplRepository} from "../data/repositories/flight-list-impl.repository";
+import {getFlightsUseCaseProvider} from "./flight-list.providers";
+import {FlightListRepository} from "../../../base/domain/repository/flight-list.repository";
+import {FlightListImplRepository} from "../../../base/data/repositories/flight-list-impl.repository";
 import {FlightListComponent} from "./flight-list.component";
 import {FlightListService} from "./services/flight-list.service";
 import {AsyncPipe} from "@angular/common";
@@ -17,7 +17,7 @@ import {FlightListFilterValue} from "./interfaces/flight-list.interfaces";
     FlightListComponent,
     AsyncPipe,
   ],
-  providers: [FlightListService, userLoginUseCaseProvider, {
+  providers: [FlightListService, getFlightsUseCaseProvider, {
     provide: FlightListRepository,
     useClass: FlightListImplRepository
   }]

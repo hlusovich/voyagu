@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject, combineLatest, Subject} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {GetFlightsUseCase} from '../../domain/use-cases/get-flights.use-case';
-import {FlightModel} from "../../domain/models/flight.model";
+import {FlightModel} from "../../../../base/domain/models/flight.model";
 import {FlightListFilterValue} from "../interfaces/flight-list.interfaces";
 import {FlightListFilterFields} from "../enums/flight-list.enums";
 import {FlightListFilterSortFields} from "../enums/flight-sort-fields.enums";

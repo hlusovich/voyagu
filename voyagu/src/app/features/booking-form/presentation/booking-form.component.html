@@ -1,12 +1,11 @@
 <div class="booking-form">
   <div class="booking-form-item body">
     <span class="booking-form-item-title">Travelers</span>
-    <booking-form-body/>
+    <booking-form-body [initialState]="initialFilterState" (setFormState)="setFormState.emit($event)"/>
   </div>
   <div class="booking-form-item summary">
     <span class="booking-form-item-title"> Price summary</span>
-
-    <booking-form-summary/>
+    <booking-form-summary [isLoading]="isLoading" [flight]="flight"/>
   </div>
 </div>
 

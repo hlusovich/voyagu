@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  computed,
   effect,
   EventEmitter,
   Input,
@@ -18,14 +17,14 @@ import {FlightListFilterValue} from "../../interfaces/flight-list.interfaces";
 import {TypedSimpleChanges} from "../../../../../base/types/typed-change.type";
 import {FlightListFilterSortFields} from "../../enums/flight-sort-fields.enums";
 import {StopsFormatPipe} from "../../pipes/stops-format.pipe";
-import {NumberFormatPipe} from "../../../../../shared/pipes/number-format.pipe";
+import {CurrencyFormatPipe} from "../../../../../shared/pipes/currency-format.pipe";
 
 @Component({
   selector: 'flight-list-filter',
   standalone: true,
   templateUrl: './flight-list-filter.component.html',
   styleUrl: './flight-list-filter.component.scss',
-  imports: [MatSelectModule, MatSlider, MatSliderThumb, MatCheckbox, StopsFormatPipe, NumberFormatPipe],
+  imports: [MatSelectModule, MatSlider, MatSliderThumb, MatCheckbox, StopsFormatPipe, CurrencyFormatPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightListFilterComponent implements OnChanges {

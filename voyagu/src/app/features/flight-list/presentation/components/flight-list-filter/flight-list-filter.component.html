@@ -15,7 +15,7 @@
   <div class="flight-list-filter-item">
     <div class="flight-list-filter-item-title">{{ filterFields.Price }}</div>
     <div class="flight-list-filter-item-counter">
-      <span class="flight-list-filter-item-counter-range">{{ price() | numberFormat }}-{{ maxPrice | numberFormat}}</span>
+      <span class="flight-list-filter-item-counter-range">{{ price() | currencyFormat }}-{{ maxPrice | currencyFormat}}</span>
       <mat-slider [disabled]="!maxPrice || !minPrice" [min]="minPrice" [max]="maxPrice" [step]="countStep()"
                   (input)="updateSliderValue($event)">
         <input matSliderThumb [value]="price()">

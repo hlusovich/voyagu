@@ -6,7 +6,7 @@
   </div>
   <div class="flight-list-item-summary">
     <div class="flight-list-item-summary-wrapper">
-      <span class="flight-list-item-summary-value">{{ data?.price | numberFormat }}</span>
+      <span class="flight-list-item-summary-value">{{ data?.price | currencyFormat }}</span>
       <span class="flight-list-item-summary-person">Per adult</span>
     </div>
     <button (click)="navigateToBookingForm(data?.id)" class="custom-button" mat-button>Book</button>

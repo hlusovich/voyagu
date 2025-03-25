@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import {FlightModel} from "../../../../domain/models/flight.model";
-import {FlightItemModel} from "../../../../domain/models/flight-item.model";
+import {FlightModel} from "../../../../../../base/domain/models/flight.model";
+import {FlightItemModel} from "../../../../../../base/domain/models/flight-item.model";
 import {DateFormatPipe} from "../../../../../../shared/pipes/date-time.pipe";
 import {TimeFormatPipe} from "../../../../../../shared/pipes/time.pipe";
 import {DurationFormatPipe} from "../../../../../../shared/pipes/duration-format.pipe";

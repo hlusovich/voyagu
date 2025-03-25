@@ -1,4 +1,4 @@
-import {Mapper} from '../../../../base/utils/mapper';
+import {Mapper} from '../../utils/mapper';
 import {FlightEntity} from '../entities/flight.entity';
 import {FlightModel} from '../../domain/models/flight.model';
 import {FlightItemEntity} from "../entities/flight-item.entity";

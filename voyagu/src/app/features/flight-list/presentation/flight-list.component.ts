@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
-import {FlightModel} from "../domain/models/flight.model";
+import {FlightModel} from "../../../base/domain/models/flight.model";
 import {FlightListFilterComponent} from "./components/flight-list-filter/flight-list-filter.component";
 import {FlightListItemComponent} from "./components/flight-list-item/flight-list-item.component";
 import {MatButton} from "@angular/material/button";

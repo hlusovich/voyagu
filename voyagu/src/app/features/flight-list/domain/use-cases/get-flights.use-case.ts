@@ -1,7 +1,7 @@
-import {NoParamUseCase, UseCaseInterfaces} from "../../../../base/interfaces/use-case.interfaces";
-import {FlightListRepository} from "../repository/flight-list.repository";
+import {NoParamUseCase } from "../../../../base/interfaces/use-case.interfaces";
+import {FlightListRepository} from "../../../../base/domain/repository/flight-list.repository";
 import {Observable} from "rxjs";
-import {FlightModel} from "../models/flight.model";
+import {FlightModel} from "../../../../base/domain/models/flight.model";
 
 export class GetFlightsUseCase
   implements NoParamUseCase<FlightModel[]> {
