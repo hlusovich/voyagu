@@ -1,24 +1,19 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
-import {BookingFormValue} from '../interfaces/booking-form.interface';
-import {GetFlightsUseCase} from "../../../flight-list/domain/use-cases/get-flights.use-case";
-import {FlightModel} from "../../../../base/domain/models/flight.model";
-import {GetFlightUseCase} from "../../domain/use-cases/get-flight.use-case";
-import {RoutesConstants} from "../../../../base/constants/routes.constants";
-import {Router} from "@angular/router";
+import {BehaviorSubject, Observable} from 'rxjs';
+import {BookingFormModel} from "../../domain/models/booking-form.model";
 
 @Injectable({
   providedIn: 'root',
 
 })
 export class BookingFormService {
-  private formState = new BehaviorSubject<Partial<BookingFormValue>>({});
+  private formState = new BehaviorSubject<Partial<BookingFormModel>>({});
 
-  public setFormState(state: Partial<BookingFormValue>): void {
+  public setFormState(state: Partial<BookingFormModel>): void {
     this.formState.next(state);
   }
 
-  public getFormState(): Observable<Partial<BookingFormValue>> {
+  public getFormState(): Observable<Partial<BookingFormModel>> {
     return this.formState.asObservable();
   }
 }

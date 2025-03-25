@@ -10,13 +10,3 @@ export interface BookingForm {
   citizenship: FormControl<string | null>;
 }
 
-export interface BookingFormValue {
-  firstName: string | null;
-  lastName: string | null;
-  gender: string | null;
-  monthOfBirth: string | null;
-  dayOfBirth: string | null;
-  yearOfBirth: number | null;
-  citizenship: string | null;
-}
-

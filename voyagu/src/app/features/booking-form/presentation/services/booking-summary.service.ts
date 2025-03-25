@@ -1,15 +1,14 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
-import {BookingFormValue} from '../interfaces/booking-form.interface';
-import {GetFlightsUseCase} from "../../../flight-list/domain/use-cases/get-flights.use-case";
+import {BehaviorSubject, Subject} from 'rxjs';
 import {FlightModel} from "../../../../base/domain/models/flight.model";
 import {GetFlightUseCase} from "../../domain/use-cases/get-flight.use-case";
 import {RoutesConstants} from "../../../../base/constants/routes.constants";
 import {Router} from "@angular/router";
+import {BookingFormModel} from "../../domain/models/booking-form.model";
 
 @Injectable()
 export class BookingSummaryService {
-  private formState = new BehaviorSubject<Partial<BookingFormValue>>({});
+  private formState = new BehaviorSubject<Partial<BookingFormModel>>({});
   private loadingSubject = new BehaviorSubject<boolean>(true);
   private flightSubject = new Subject<FlightModel>();
 

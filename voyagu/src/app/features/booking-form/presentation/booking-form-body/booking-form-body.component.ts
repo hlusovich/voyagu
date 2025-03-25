@@ -19,8 +19,9 @@ import { MatButton } from "@angular/material/button";
 import { RoutesConstants } from "../../../../base/constants/routes.constants";
 import { Router } from "@angular/router";
 import { MatInput } from "@angular/material/input";
-import { BookingForm, BookingFormValue } from "../interfaces/booking-form.interface";
+import { BookingForm } from "../interfaces/booking-form.interface";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import {BookingFormModel} from "../../domain/models/booking-form.model";
 
 @Component({
   selector: 'booking-form-body',
@@ -41,9 +42,9 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
   ]
 })
 export class BookingFormBodyComponent implements OnInit, OnDestroy {
-  @Input() initialState: Partial<BookingFormValue> | null = {};
+  @Input() initialState: Partial<BookingFormModel> | null = {};
 
-  @Output() readonly setFormState = new EventEmitter<Partial<BookingFormValue>>();
+  @Output() readonly setFormState = new EventEmitter<Partial<BookingFormModel>>();
 
   protected readonly maxDaysCount = 31;
   protected bookingForm: FormGroup<BookingForm>;
@@ -64,6 +65,29 @@ export class BookingFormBodyComponent implements OnInit, OnDestroy {
       citizenship: this.fb.control('', Validators.required)
     });
   }
+
+  getFormValue(): BookingFormModel {
+    const {
+      firstName = '',
+      lastName = '',
+      gender = '',
+      monthOfBirth = '',
+      dayOfBirth = '',
+      yearOfBirth = '',
+      citizenship = ''
+    } = this.bookingForm.value;
+
+    return {
+      firstName : firstName || '',
+      lastName : lastName || '',
+      gender : gender || '',
+      monthOfBirth: monthOfBirth|| '',
+      dayOfBirth: dayOfBirth|| '',
+      yearOfBirth : yearOfBirth || new Date().getFullYear(),
+      citizenship : citizenship || '',
+    };
+  }
+
 
   ngOnInit(): void {
     const formValues = this.initialState;
@@ -93,7 +117,7 @@ export class BookingFormBodyComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.setFormState.emit(this.bookingForm.value);
+    this.setFormState.emit(this.getFormValue());
   }
 
   protected onSubmit(): void {
