@@ -1,0 +1,61 @@
+<form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+  <div class="booking-form-body">
+    <mat-form-field class="custom-input" appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" placeholder="First Name">
+    </mat-form-field>
+
+    <mat-form-field class="custom-input" appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" placeholder="Last Name">
+    </mat-form-field>
+
+    <mat-radio-group formControlName="gender">
+      @for (gender of genders; track gender; ) {
+        <mat-radio-button [value]="gender">{{ gender }}</mat-radio-button>
+      }
+    </mat-radio-group>
+
+    <div class="booking-form-body-row">
+      <mat-form-field class="custom-input booking-form-body-row-item" appearance="outline">
+        <mat-label>Month of Birth</mat-label>
+        <mat-select formControlName="monthOfBirth" placeholder="Month of Birth">
+          @for (month of months; track month; ) {
+            <mat-option [value]="month">{{ month }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="custom-input booking-form-body-row-item" appearance="outline">
+        <mat-label>Day of Birth</mat-label>
+        <mat-select formControlName="dayOfBirth" placeholder="Day of Birth">
+          @for (day of days; track day; ) {
+            <mat-option [value]="day">{{ day }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="custom-input booking-form-body-row-item" appearance="outline">
+        <mat-label>Year of Birth</mat-label>
+        <mat-select formControlName="yearOfBirth" placeholder="Year of Birth">
+          @for (year of years; track year; ) {
+            <mat-option [value]="year">{{ year }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-form-field class="custom-input booking-form-body-row-item" appearance="outline">
+      <mat-label>Citizenship</mat-label>
+      <mat-select formControlName="citizenship" placeholder="Citizenship">
+        @for (citizenship of citizenships; track citizenship; ) {
+          <mat-option [value]="citizenship">{{ citizenship }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="booking-form-actions">
+    <button (click)="onBack()" class="custom-button outlined booking-form-actions-item back" mat-button>Back</button>
+    <button [disabled]="bookingForm.invalid" (click)="onSubmit()" class="custom-button booking-form-actions-item submit" mat-button>Confirm</button>
+  </div>
+</form>

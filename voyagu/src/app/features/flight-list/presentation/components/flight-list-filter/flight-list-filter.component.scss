@@ -1,0 +1,39 @@
+:host {
+  .flight-list-filter {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius);
+    gap: var(--offset-l);
+    padding: var(--offset-m);
+    border: 1px solid var(--separations-base);
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--offset-xm);
+
+      &-title {
+        font-size: var(--font-size-medium);
+        font-weight: var(--font-weight-bold);
+        color: var(--black-base);
+      }
+
+      &-counter {
+        display: flex;
+        flex-direction: column;
+
+        &-range {
+          font-size: var(--font-size-small);
+          font-weight: var(--font-weight-normal);
+          color: var(--black-base);
+        }
+      }
+
+      &-body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--offset-s);
+      }
+    }
+  }
+}

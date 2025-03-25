@@ -1,0 +1,46 @@
+:host {
+  .flight-list-item-row {
+    display: flex;
+    gap: var(--offset-m);
+
+    &-logo {
+      height: 40px;
+      width: 40px;
+    }
+
+    &-details {
+      display: flex;
+      gap: calc(var(--offset-l) + var(--offset-xm));
+      font-size: var(--font-size-medium);
+      font-weight: var(--font-weight-normal);
+
+     &-item {
+       display: flex;
+       flex-direction: column;
+       width: 90px;
+
+       &-time {
+         color: var(--black-base);
+       }
+
+       &-info {
+         display: flex;
+         align-items: center;
+         color: var(--grey-base);
+         gap: var(--offset-xs);
+
+         &-divider {
+           border-radius: 100px;
+           height: 4px;
+           width: 4px;
+           background-color: var(--grey-base);
+         }
+       }
+
+       &.duration {
+         width: 60px;
+       }
+     }
+    }
+  }
+}

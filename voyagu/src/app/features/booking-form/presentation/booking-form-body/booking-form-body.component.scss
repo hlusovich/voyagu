@@ -1,0 +1,37 @@
+:host {
+  .booking-form-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--offset-m);
+    padding: var(--offset-m);
+    border: 1px solid var(--separations-base);
+    border-radius: var(--radius);
+
+    &-row {
+      display: flex;
+      align-items: center;
+      gap: var(--offset-m);
+
+      &-item {
+        width: 100%;
+      }
+    }
+  }
+
+  .booking-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--offset-l);
+
+    &-item {
+      &.submit {
+        width: 102px;
+      }
+
+      &.back {
+        width: 88px;
+      }
+    }
+  }
+}

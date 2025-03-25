@@ -1,0 +1,26 @@
+:host {
+  .flight-list-wrapper {
+    display: flex;
+    gap: var(--offset-m);
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .flight-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--offset-l);
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+  }
+
+  .flight-list-no-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+}

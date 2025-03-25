@@ -1,0 +1,30 @@
+:root {
+  /* Variables for different colors values */
+  --black-base: #0A1D3D;
+  --black-dark: #0B0A0D;
+  --white-base: #FFFFFF;
+  --separations-base: #E2E0E3;
+  --grey-base: #898390;
+
+  /* Variables for different offset values */
+  --offset-xs: 4px;
+  --offset-s: 8px;
+  --offset-xm: 12px;
+  --offset-m: 16px;
+  --offset-l: 24px;
+  --offset-xl: 32px;
+
+  /* Variables for different fonts sizes */
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-large: 20px;
+  --font-size-xlarge: 32px;
+
+  /* Variables for different fonts weight */
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+
+  /* Variables for different border radius*/
+  --radius: 12px;
+  --radius-small: 8px;
+}

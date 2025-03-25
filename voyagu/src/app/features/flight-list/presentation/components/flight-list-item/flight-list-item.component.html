@@ -1,0 +1,15 @@
+<div class="flight-list-item">
+  <div class="flight-list-item-rows">
+    @for (flight of data?.flights; track flight; ) {
+      <flight-list-item-row [data]="flight"/>
+    }
+  </div>
+  <div class="flight-list-item-summary">
+    <div class="flight-list-item-summary-wrapper">
+      <span class="flight-list-item-summary-value">{{ data?.price | numberFormat }}</span>
+      <span class="flight-list-item-summary-person">Per adult</span>
+    </div>
+    <button (click)="navigateToBookingForm(data?.id)" class="custom-button" mat-button>Book</button>
+  </div>
+</div>
+

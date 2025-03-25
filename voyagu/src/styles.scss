@@ -1,0 +1,21 @@
+@use '@angular/material' as mat;
+@use 'scss/variables';
+@use 'scss/input-styles';
+@use 'scss/button-styles';
+@include mat.core();
+$voyagu-primary: mat.define-palette(mat.$blue-palette);
+$voyagu-accent: mat.define-palette(mat.$blue-palette, A200, A100, A400);
+$voyagu-warn: mat.define-palette(mat.$red-palette);
+$voyagu-theme: mat.define-light-theme((
+  color: (
+    primary: $voyagu-primary,
+    accent: $voyagu-accent,
+    warn: $voyagu-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+@include mat.all-component-themes($voyagu-theme);
+
+html, body { height: 100%; overflow: hidden }
+body { margin: 0; font-family: Inter, "Helvetica Neue", sans-serif; }

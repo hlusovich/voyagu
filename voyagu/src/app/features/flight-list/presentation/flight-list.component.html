@@ -1,0 +1,24 @@
+<div class="flight-list-wrapper">
+  <flight-list-filter [stops]="stops" [maxPrice]="maxPrice" [minPrice]="minPrice"
+                      (valueChange)="filterChange.emit($event)"/>
+  @if (flights?.length) {
+    <div class="flight-list">
+      @for (flight of flights; track flight.id; ) {
+        <flight-list-item [data]="flight"/>
+      }
+      @if (isMore) {
+        <button (click)="showMore.emit()" class="custom-button outlined" mat-button>Show more
+        </button>
+      }
+    </div>
+  } @else {
+    <div class="flight-list-no-data">
+      @if (isLoading) {
+        <mat-spinner></mat-spinner>
+      } @else {
+        <span>No Items Pls Change Filters</span>
+      }
+    </div>
+  }
+</div>
+

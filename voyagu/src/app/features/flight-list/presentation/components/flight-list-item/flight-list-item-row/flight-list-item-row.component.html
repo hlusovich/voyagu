@@ -1,0 +1,25 @@
+<div class="flight-list-item-row">
+  <div class="flight-list-item-row-logo">
+    <img [src]="'https://d263qmvlt29h99.cloudfront.net/' + data?.airline + '.svg'" alt="airline"/>
+  </div>
+  <div class="flight-list-item-row-details">
+    <div class="flight-list-item-row-details-item">
+      <div class="flight-list-item-row-details-item-time">{{ data?.departureTime | timeFormat }}</div>
+      <div class="flight-list-item-row-details-item-info"> {{ data?.departureAirport }}
+        <div class="flight-list-item-row-details-item-info-divider"></div>
+        {{ data?.departureDate | dateFormat }}
+      </div>
+    </div>
+    <div class="flight-list-item-row-details-item">
+      <div class="flight-list-item-row-details-item-time">{{ data?.arrivalTime | timeFormat }}</div>
+      <div class="flight-list-item-row-details-item-info"> {{ data?.arrivalAirport }}
+        <div class="flight-list-item-row-details-item-info-divider"></div>
+        {{ data?.arrivalDate | dateFormat }}
+      </div>
+    </div>
+    <div class="flight-list-item-row-details-item duration">
+      <div class="flight-list-item-row-details-item-time">{{ data?.durationMinutes | durationFormat }}</div>
+      <div class="flight-list-item-row-details-item-info"> {{ data?.stops | stopsFormat }}</div>
+    </div>
+  </div>
+</div>
