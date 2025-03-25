@@ -2,7 +2,7 @@ import {FlightListRepository} from "../../../base/domain/repository/flight-list.
 import {GetFlightsUseCase} from "../domain/use-cases/get-flights.use-case";
 
 const getFlightsUseCaseFactory =
-  (userRepo: FlightListRepository) => new GetFlightsUseCase(userRepo);
+  (repo: FlightListRepository) => new GetFlightsUseCase(repo);
 
 export const getFlightsUseCaseProvider = {
   provide: GetFlightsUseCase,

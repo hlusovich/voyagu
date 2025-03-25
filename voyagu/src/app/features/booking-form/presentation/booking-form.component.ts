@@ -1,9 +1,8 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from "@angular/core";
 import {BookingFormBodyComponent} from "./booking-form-body/booking-form-body.component";
 import {BookingFormSummaryComponent} from "./booking-form-summary/booking-form-summary.component";
-import {BookingFormValue} from "./interfaces/booking-form.interface";
-import {JsonPipe} from "@angular/common";
 import {FlightModel} from "../../../base/domain/models/flight.model";
+import {BookingFormModel} from "../domain/models/booking-form.model";
 
 @Component({
   selector: 'booking-form',
@@ -17,9 +16,10 @@ import {FlightModel} from "../../../base/domain/models/flight.model";
   ]
 })
 export class BookingFormComponent {
-  @Input() initialFilterState: Partial<BookingFormValue> | null = {};
+  @Input() initialFilterState: Partial<BookingFormModel> | null = {};
   @Input() isLoading: boolean | null = false;
   @Input() flight: FlightModel | null = null;
 
-  @Output() readonly setFormState = new EventEmitter<Partial<BookingFormValue>>();
+  @Output() readonly setFormState = new EventEmitter<Partial<BookingFormModel>>();
+  @Output() readonly submitValue = new EventEmitter<BookingFormModel>();
 }

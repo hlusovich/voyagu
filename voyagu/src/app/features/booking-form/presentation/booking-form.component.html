@@ -1,7 +1,7 @@
 <div class="booking-form">
   <div class="booking-form-item body">
     <span class="booking-form-item-title">Travelers</span>
-    <booking-form-body [initialState]="initialFilterState" (setFormState)="setFormState.emit($event)"/>
+    <booking-form-body (submitValue)="submitValue.emit($event)" [initialState]="initialFilterState" (setFormState)="setFormState.emit($event)"/>
   </div>
   <div class="booking-form-item summary">
     <span class="booking-form-item-title"> Price summary</span>

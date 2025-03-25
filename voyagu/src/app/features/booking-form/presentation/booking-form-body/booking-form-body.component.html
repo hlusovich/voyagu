@@ -56,6 +56,6 @@
 
   <div class="booking-form-actions">
     <button (click)="onBack()" class="custom-button outlined booking-form-actions-item back" mat-button>Back</button>
-    <button [disabled]="bookingForm.invalid" (click)="onSubmit()" class="custom-button booking-form-actions-item submit" mat-button>Confirm</button>
+    <button [disabled]="bookingForm.invalid" type="submit" class="custom-button booking-form-actions-item submit" mat-button>Confirm</button>
   </div>
 </form>
